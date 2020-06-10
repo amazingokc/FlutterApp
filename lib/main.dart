@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'BaseWidget.dart';
-import 'linerLayout.dart';
+import 'alignWidget.dart';
+import 'linerLayoutWidget.dart';
+import 'flexWidget.dart';
+import 'wrapAndFlowWidget.dart';
+import 'frameLayoutWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,8 +31,13 @@ class MyApp extends StatelessWidget {
         routes: {
           "new_page": (context) => NewRoute(),
           "BaseWidgetPage": (context) => BaseWidgetPage(),
-//          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => LinerLayoutPage(),
+          "LinerLayoutPage": (context) => LinerLayoutPage(),
+          "WrapAndFlowPage": (context) => WrapAndFlowPage(),
+          "FlexPage": (context) => FlexPage(),
+          "FrameLayoutPage": (context) => FrameLayoutPage(),
+          "AlignPage": (context) => AlignPage(),
+          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+//          "/": (context) => AlignPage(),
 //
           //注册首页路由
         });
@@ -167,7 +176,31 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
               child: Text("线性布局"),
               onPressed: () {
-//                Navigator.pushNamed(context, routeName)
+                Navigator.pushNamed(context, "LinerLayoutPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("弹性布局"),
+              onPressed: () {
+                Navigator.pushNamed(context, "FlexPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("流式布局"),
+              onPressed: () {
+                Navigator.pushNamed(context, "WrapAndFlowPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("层叠布局"),
+              onPressed: () {
+                Navigator.pushNamed(context, "FrameLayoutPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("对齐与相对定位"),
+              onPressed: () {
+                Navigator.pushNamed(context, "AlignPage");
               },
             )
           ],
