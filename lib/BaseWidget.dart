@@ -159,8 +159,7 @@ class _BaseWidgetPage extends State<BaseWidgetPage> {
                     CircularProgressIndicator(
                       strokeWidth: 4.0,
                       backgroundColor: Colors.grey,
-                    )
-
+                    ),
                   ],
                 ),
               )),

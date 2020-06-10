@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'BaseWidget.dart';
+import 'linerLayout.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,8 +26,10 @@ class MyApp extends StatelessWidget {
 //        home: MyHomePage(title: 'Flutter Demo Home Page'),
         routes: {
           "new_page": (context) => NewRoute(),
+          "BaseWidgetPage": (context) => BaseWidgetPage(),
 //          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => BaseWidgetPage(),
+          "/": (context) => LinerLayoutPage(),
+//
           //注册首页路由
         });
   }
@@ -45,6 +48,7 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -129,30 +133,43 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times222:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            FlatButton(
-              child: Text("open new route"),
-              textColor: Colors.blue,
-              onPressed: () async {
-                //导航到新路由
-//                var result = await Navigator.push(context,
-//                    MaterialPageRoute(builder: (context) {
-//                  return NewRoute(
-//                    count: _counter,
-//                  );
-//                }));
-                var result = await Navigator.pushNamed(context, "new_page");
+//            Text(
+//              'You have pushed the button this many times222:',
+//            ),
+//            Text(
+//              '$_counter',
+//              style: Theme.of(context).textTheme.display1,
+//            ),
+//            FlatButton(
+//              child: Text("open new route"),
+//              textColor: Colors.blue,
+//              onPressed: () async {
+//                //导航到新路由
+////                var result = await Navigator.push(context,
+////                    MaterialPageRoute(builder: (context) {
+////                  return NewRoute(
+////                    count: _counter,
+////                  );
+////                }));
+//                var result = await Navigator.pushNamed(context, "new_page");
+//
+//                //输出`TipRoute`路由返回结果
+//                print("路由返回值: $result");
+//              },
+//            ),
 
-                //输出`TipRoute`路由返回结果
-                print("路由返回值: $result");
+            RaisedButton(
+              child: Text("基础组件"),
+              onPressed: () {
+                Navigator.pushNamed(context, "BaseWidgetPage");
               },
             ),
+            RaisedButton(
+              child: Text("线性布局"),
+              onPressed: () {
+//                Navigator.pushNamed(context, routeName)
+              },
+            )
           ],
         ),
       ),
