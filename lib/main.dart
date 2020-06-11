@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/scaffoldWidget.dart';
 
 import 'BaseWidget.dart';
 import 'alignWidget.dart';
@@ -38,8 +39,9 @@ class MyApp extends StatelessWidget {
           "FrameLayoutPage": (context) => FrameLayoutPage(),
           "AlignPage": (context) => AlignPage(),
           "ContainerPage": (context) => ContainerPage(),
+          "ScaffoldPage": (context) => ScaffoldPage(),
 //          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => ContainerPage(),
+          "/": (context) => ScaffoldPage(),
 //
           //注册首页路由
         });
@@ -203,6 +205,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("对齐与相对定位"),
               onPressed: () {
                 Navigator.pushNamed(context, "AlignPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("容器"),
+              onPressed: () {
+                Navigator.pushNamed(context, "ContainerPage");
               },
             )
           ],
