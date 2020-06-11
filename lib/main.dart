@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'BaseWidget.dart';
 import 'alignWidget.dart';
+import 'containerWidget.dart';
 import 'linerLayoutWidget.dart';
 import 'flexWidget.dart';
 import 'wrapAndFlowWidget.dart';
@@ -36,8 +37,9 @@ class MyApp extends StatelessWidget {
           "FlexPage": (context) => FlexPage(),
           "FrameLayoutPage": (context) => FrameLayoutPage(),
           "AlignPage": (context) => AlignPage(),
+          "ContainerPage": (context) => ContainerPage(),
 //          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => AlignPage(),
+          "/": (context) => ContainerPage(),
 //
           //注册首页路由
         });
