@@ -83,7 +83,7 @@ class _AlignPage extends State<AlignPage> {
             DecoratedBox(
               decoration: BoxDecoration(color: Colors.red),
               child: Transform.rotate(
-                angle: math.pi/2,
+                angle: math.pi / 2,
                 child: Text("aaaaaaa"),
               ),
             ),
@@ -96,6 +96,25 @@ class _AlignPage extends State<AlignPage> {
                 scale: 1.5,
                 child: Text("aaaaaaa"),
               ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                DecoratedBox(
+                  decoration: BoxDecoration(color: Colors.red),
+                  child: RotatedBox(
+                    quarterTurns: 1,
+                    child: Text("aaaa"),
+                  ),
+                ),
+                Text(
+                  "你好",
+                  style: TextStyle(color: Colors.green, fontSize: 18.0),
+                )
+              ],
             )
           ],
         ));

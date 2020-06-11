@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
           "FlexPage": (context) => FlexPage(),
           "FrameLayoutPage": (context) => FrameLayoutPage(),
           "AlignPage": (context) => AlignPage(),
-          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-//          "/": (context) => AlignPage(),
+//          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+          "/": (context) => AlignPage(),
 //
           //注册首页路由
         });
