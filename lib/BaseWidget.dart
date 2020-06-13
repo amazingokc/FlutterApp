@@ -16,7 +16,8 @@ class _BaseWidgetPage extends State<BaseWidgetPage> {
     var imgUrl = NetworkImage(
         "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4");
     bool _switchSelected = true; //维护单选开关状态
-    bool _checkboxSelected = false; //维护复选框状态
+    bool _switchSelected2 = true; //维护单选开关状态
+    bool _checkboxSelected = true; //维护复选框状态
 
     return Scaffold(
         appBar: AppBar(
@@ -72,24 +73,33 @@ class _BaseWidgetPage extends State<BaseWidgetPage> {
                       width: 100.0,
                       fit: BoxFit.cover,
                     ),
-                    Switch(
-                      value: _switchSelected,
-                      onChanged: (value) {
-                        setState(() {
-                          _switchSelected = !_switchSelected;
-                          print("dsadsadsadas__$_switchSelected");
-                        });
+                    Builder(
+                      builder: (BuildContext context) {
+                        return Switch(
+                          value: _switchSelected,
+                          activeColor: Colors.green,
+                          onChanged: (value) {
+                            (context as Element).markNeedsBuild();
+                            _switchSelected = !_switchSelected;
+                          },
+                        );
                       },
                     ),
-//                Checkbox(
-//                  value: _checkboxSelected,
-//                  activeColor: Colors.blue,
-//                  onChanged: (bool value) {
-//                    setState(() {
-//                      _checkboxSelected = value;
-//                    });
-//                  },
-//                )
+
+
+                    Builder(
+                      builder: (BuildContext context) {
+                        return Checkbox(
+                          value: _checkboxSelected,
+                          activeColor: Colors.green,
+                          onChanged: (value) {
+                            (context as Element).markNeedsBuild();
+                            _checkboxSelected = !_checkboxSelected;
+                          },
+                        );
+                      },
+                    ),
+
                     TextFormField(
                       autofocus: true,
 //                  controller: ,
