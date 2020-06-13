@@ -40,8 +40,8 @@ class MyApp extends StatelessWidget {
           "AlignPage": (context) => AlignPage(),
           "ContainerPage": (context) => ContainerPage(),
           "ScaffoldPage": (context) => ScaffoldPage(),
-//          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => ScaffoldPage(),
+          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+//          "/": (context) => ScaffoldPage(),
 //
           //注册首页路由
         });
@@ -211,6 +211,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("容器"),
               onPressed: () {
                 Navigator.pushNamed(context, "ContainerPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("Scaffold"),
+              onPressed: () {
+                Navigator.pushNamed(context, "ScaffoldPage");
               },
             )
           ],

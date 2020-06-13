@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class BaseWidgetPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
+  _BaseWidgetPage createState() {
     return new _BaseWidgetPage();
   }
 }

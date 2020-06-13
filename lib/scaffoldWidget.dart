@@ -67,31 +67,19 @@ class _ScaffoldWidget extends State<ScaffoldPage>
         drawer: new MyDrawer(),
         //抽屉
 
-//      bottomNavigationBar: BottomNavigationBar(
-//        //底部导航
-//        items: <BottomNavigationBarItem>[
-//          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
-//          BottomNavigationBarItem(
-//              icon: Icon(Icons.business), title: Text("Business")),
-//          BottomNavigationBarItem(
-//              icon: Icon(Icons.school), title: Text("School")),
-//        ],
-//        currentIndex: _selectedIndex,
-//        fixedColor: Colors.red,
-//        onTap: _onItemTap,
-//      ),
-
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.white,
-          shape: CircularNotchedRectangle(), // 底部导航栏打一个圆形的洞
-          child: Row(
-            children: <Widget>[
-              IconButton(icon: Icon(Icons.home),),
-              SizedBox(),
-              IconButton(icon: Icon(Icons.home),)
-            ],
-          ),
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        //底部导航
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.business), title: Text("Business")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.school), title: Text("School")),
+        ],
+        currentIndex: _selectedIndex,
+        fixedColor: Colors.red,
+        onTap: _onItemTap,
+      ),
 
         body: TabBarView(
         controller: _tabController,
