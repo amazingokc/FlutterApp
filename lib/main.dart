@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/scaffoldWidget.dart';
+import 'package:flutterapp/scrollController.dart';
 import 'package:flutterapp/singleChildScrollViewWidget.dart';
 
 import 'BaseWidget.dart';
@@ -48,8 +49,9 @@ class MyApp extends StatelessWidget {
           "ListViewPage": (context) => ListViewPage(),
           "GridViewPage": (context) => GridViewPage(),
           "CustomScrollViewPage": (context) => CustomScrollViewPage(),
+          "ScrollControllerPage": (context) => ScrollControllerPage(),
 //          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => CustomScrollViewPage(),
+          "/": (context) => ScrollControllerPage(),
 //
           //注册首页路由
         });
@@ -249,6 +251,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("CustomScrollViewPage"),
               onPressed: () {
                 Navigator.pushNamed(context, "CustomScrollViewPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("ScrollControllerPage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "ScrollControllerPage");
               },
             ),
 
