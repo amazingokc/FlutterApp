@@ -44,8 +44,8 @@ class MyApp extends StatelessWidget {
           "ScaffoldPage": (context) => ScaffoldPage(),
           "SingleChildScrollViewPage": (context) => SingleChildScrollViewPage(),
           "ListViewPage": (context) => ListViewPage(),
-//          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => ListViewPage(),
+          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+//          "/": (context) => ListViewPage(),
 //
           //注册首页路由
         });

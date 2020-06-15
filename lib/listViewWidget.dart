@@ -9,8 +9,8 @@ class ListViewPage extends StatefulWidget {
 }
 
 class _ListViewPage extends State {
-//  static const loadingTag = "##loading##"; //表尾标记
-  static const loadingTag = "1"; //表尾标记
+  static const loadingTag = "##loading##"; //表尾标记
+//  static const loadingTag = "1"; //表尾标记
   var _words = <String>[loadingTag];
 
   String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11";
@@ -66,41 +66,53 @@ class _ListViewPage extends State {
 //                      );
 //              },
 //              itemCount: 100),
-        ListView.separated(
-            itemBuilder: (context, index) {
-              if (_words[index] == loadingTag) {
-                if (_words.length < 100) {
-                  _retrieveData();
-                  return Container(
-                    padding: const EdgeInsets.all(16.0),
-                    alignment: Alignment.center,
-                    child: SizedBox(
-                      width: 24,
-                      height: 24,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                      ),
-                    ),
-                  );
-                } else {
-                  return Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(16),
-                    child: Text("没有更多了", style: TextStyle(color: Colors.grey),),
-                  );
-                }
-              }
-              return ListTile(title: Text(_words[index]),);
-            },
 
-            separatorBuilder: (context, index) => Divider(height: .0,),
-            itemCount: _words.length));
+        Column(
+          children: <Widget>[
+            ListTile(title:  Text("商品标题"),),
+            Expanded(
+              child:  ListView.separated(
+                  itemBuilder: (context, index) {
+                    if (_words[index] == loadingTag) {
+                      if (_words.length < 100) {
+                        _retrieveData();
+                        return Container(
+                          padding: const EdgeInsets.all(16.0),
+                          alignment: Alignment.center,
+                          child: SizedBox(
+                            width: 24,
+                            height: 24,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
+                          ),
+                        );
+                      } else {
+                        return Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(16),
+                          child: Text("没有更多了", style: TextStyle(color: Colors.grey),),
+                        );
+                      }
+                    }
+                    return ListTile(title: Text(_words[index]),);
+                  },
+
+                  separatorBuilder: (context, index) => Divider(),
+                  itemCount: _words.length),
+            )
+          ],
+        )
+
+
+
+    );
   }
 
   @override
   void initState() {
     super.initState();
-    _retrieveData();
+//    _retrieveData();
   }
 
   void _retrieveData() {
