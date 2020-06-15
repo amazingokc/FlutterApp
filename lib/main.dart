@@ -5,6 +5,7 @@ import 'package:flutterapp/singleChildScrollViewWidget.dart';
 import 'BaseWidget.dart';
 import 'alignWidget.dart';
 import 'containerWidget.dart';
+import 'customScrollViewWidget.dart';
 import 'gridViewWidget.dart';
 import 'linerLayoutWidget.dart';
 import 'flexWidget.dart';
@@ -46,8 +47,9 @@ class MyApp extends StatelessWidget {
           "SingleChildScrollViewPage": (context) => SingleChildScrollViewPage(),
           "ListViewPage": (context) => ListViewPage(),
           "GridViewPage": (context) => GridViewPage(),
+          "CustomScrollViewPage": (context) => CustomScrollViewPage(),
 //          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => GridViewPage(),
+          "/": (context) => CustomScrollViewPage(),
 //
           //注册首页路由
         });
@@ -241,6 +243,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("GridViewPage"),
               onPressed: () {
                 Navigator.pushNamed(context, "GridViewPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("CustomScrollViewPage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "CustomScrollViewPage");
               },
             ),
 
