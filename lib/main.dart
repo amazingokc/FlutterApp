@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/scaffoldWidget.dart';
+import 'package:flutterapp/singleChildScrollViewWidget.dart';
 
 import 'BaseWidget.dart';
 import 'alignWidget.dart';
 import 'containerWidget.dart';
 import 'linerLayoutWidget.dart';
 import 'flexWidget.dart';
+import 'listViewWidget.dart';
 import 'wrapAndFlowWidget.dart';
 import 'frameLayoutWidget.dart';
 
@@ -40,8 +42,10 @@ class MyApp extends StatelessWidget {
           "AlignPage": (context) => AlignPage(),
           "ContainerPage": (context) => ContainerPage(),
           "ScaffoldPage": (context) => ScaffoldPage(),
-          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-//          "/": (context) => ScaffoldPage(),
+          "SingleChildScrollViewPage": (context) => SingleChildScrollViewPage(),
+          "ListViewPage": (context) => ListViewPage(),
+//          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+          "/": (context) => ListViewPage(),
 //
           //注册首页路由
         });
@@ -218,7 +222,20 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, "ScaffoldPage");
               },
-            )
+            ),
+            RaisedButton(
+              child: Text("SingleChildScrollView"),
+              onPressed: () {
+                Navigator.pushNamed(context, "SingleChildScrollView");
+              },
+            ),
+            RaisedButton(
+              child: Text("ListViewPage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "ListViewPage");
+              },
+            ),
+
           ],
         ),
       ),
