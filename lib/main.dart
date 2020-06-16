@@ -8,6 +8,7 @@ import 'BaseWidget.dart';
 import 'alignWidget.dart';
 import 'containerWidget.dart';
 import 'customScrollViewWidget.dart';
+import 'future.dart';
 import 'gridViewWidget.dart';
 import 'linerLayoutWidget.dart';
 import 'flexWidget.dart';
@@ -52,8 +53,9 @@ class MyApp extends StatelessWidget {
           "CustomScrollViewPage": (context) => CustomScrollViewPage(),
           "ScrollControllerPage": (context) => ScrollControllerPage(),
           "ThemeTestPage": (context) => ThemeTestPage(),
-//          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => ThemeTestPage(),
+          "FutureTestPage": (context) => FutureTestPage(),
+          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+//          "/": (context) => FutureTestPage(),
 //
           //注册首页路由
         });
@@ -282,6 +284,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("ThemeTestPage"),
               onPressed: () {
                 Navigator.pushNamed(context, "ThemeTestPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("FutureTestPage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "FutureTestPage");
               },
             ),
           ],
