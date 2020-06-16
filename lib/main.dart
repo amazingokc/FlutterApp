@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/scaffoldWidget.dart';
 import 'package:flutterapp/scrollController.dart';
 import 'package:flutterapp/singleChildScrollViewWidget.dart';
+import 'package:flutterapp/theme.dart';
 
 import 'BaseWidget.dart';
 import 'alignWidget.dart';
@@ -50,8 +51,9 @@ class MyApp extends StatelessWidget {
           "GridViewPage": (context) => GridViewPage(),
           "CustomScrollViewPage": (context) => CustomScrollViewPage(),
           "ScrollControllerPage": (context) => ScrollControllerPage(),
+          "ThemeTestPage": (context) => ThemeTestPage(),
 //          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
-          "/": (context) => ScrollControllerPage(),
+          "/": (context) => ThemeTestPage(),
 //
           //注册首页路由
         });
@@ -124,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime _lastPressedAt; //上次点击时间
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -181,6 +184,22 @@ class _MyHomePageState extends State<MyHomePage> {
 //              },
 //            ),
 
+            WillPopScope(
+              onWillPop: () async {
+                if (_lastPressedAt == null ||
+                    DateTime.now().difference(_lastPressedAt) >
+                        Duration(seconds: 1)) {
+                  _lastPressedAt = DateTime.now();
+                  return false;
+                }
+                return true;
+              },
+              child: Container(
+                alignment: Alignment.center,
+                child: Text("1秒内连续按两次返回键退出"),
+              ),
+            ),
+
             RaisedButton(
               child: Text("基础组件"),
               onPressed: () {
@@ -230,9 +249,9 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             RaisedButton(
-              child: Text("SingleChildScrollView"),
+              child: Text("SingleChildScrollViewPage"),
               onPressed: () {
-                Navigator.pushNamed(context, "SingleChildScrollView");
+                Navigator.pushNamed(context, "SingleChildScrollViewPage");
               },
             ),
             RaisedButton(
@@ -259,7 +278,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "ScrollControllerPage");
               },
             ),
-
+            RaisedButton(
+              child: Text("ThemeTestPage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "ThemeTestPage");
+              },
+            ),
           ],
         ),
       ),

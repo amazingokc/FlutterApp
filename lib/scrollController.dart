@@ -37,6 +37,7 @@ class _ScrollControllerState extends State {
 
           Scrollbar(
         child: NotificationListener<ScrollNotification>(
+          // ignore: missing_return
           onNotification: (ScrollNotification notification) {
             double progress = notification.metrics.pixels /
                 notification.metrics.maxScrollExtent;
